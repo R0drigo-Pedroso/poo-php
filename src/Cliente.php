@@ -2,9 +2,9 @@
 
 class Cliente {
     // Propriedade (ou atributos)
-    public $nome; //string
-    public $email; //string
-    public $senha; //string
-    public $telefones; //array
+    public string $nome; //string
+    public string $email; //string
+    public string $senha; //string
+    public array $telefones; //array
 }
 

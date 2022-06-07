@@ -26,7 +26,7 @@
 
 <?php
     // Importando a Classe
-    require_once 'src/Clientes.php';
+    require_once 'src/Cliente.php';
 
     //Criação dos Objetos
     $clienteA = new Cliente;

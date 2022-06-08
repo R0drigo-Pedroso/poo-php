@@ -7,20 +7,16 @@
     <title>Exemplo 02 - PHP - POO</title>
 </head>
 <body>
-    <h1>PHP POO - Exemplo 02</h1>
+    <h1>PHP POO - Exemplo 03</h1>
     <hr>
 
     <ul>
         <li>
-            Criação dos Objetos
+            Acesso direto à propriedade
         </li>
 
         <li>
-            Uso do método construtor
-        </li>
-
-        <li>
-            Uso do <code>$this</code> para acessar as propriedades
+            Atribuição de dados e leitura
         </li>
     </ul>
 
@@ -29,11 +25,34 @@
     require_once 'src/Cliente.php';
 
     //Criação dos Objetos
-    $clienteA = new Cliente('Rodrigo', 'rodrigo@email.com');
-    $clienteB = new Cliente('Carla', 'carla@email.com');
+    $clienteA = new Cliente;
+    $clienteB = new Cliente;
+
+    // Atribuido dados às propriedades do objetos
+
+    $clienteA->nome = 'João';
+    $clienteA->email = "joao@contato.com";
+    $clienteA->telefones = ["11-98989-8989", "11-2345-1234"];
+
+    $clienteB->nome = 'Maria';
+    $clienteB->email = "maria@ver.com.br";
+    $clienteB->telefones = array("11-98495-8495");
 ?>
 
-<pre><?=var_dump($clienteA, $clienteB)?></pre>
+    <h2>Dados dos Objetos (leitura)</h2>
+        <hr>
+    
+    <h3><?=$clienteA->nome?></h3>
+        <p>Email: <?=$clienteA->email?></p>
+        <p>Telefones: <?=implode(", ", $clienteA->telefones)?></p>
+
+    <h3><?=$clienteB->nome?></h3>
+        <p>Email: <?=$clienteB->email?></p>
+        <p>Telefones: <?=implode(", ", $clienteB->telefones)?></p>
+    
+    <h2>Chamado método exibirDados</h2>
+    <?=$clienteA->exibirDados()?>
+    <?=$clienteB->exibirDados()?>
 
 </body>
 </html>

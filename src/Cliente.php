@@ -2,17 +2,19 @@
 
 class Cliente {
     // Propriedade (ou atributos)
-    public $nome; //string
-    public $email; //string
-    public $senha; //string
-    public $telefones; //array
+    public string $nome; //string
+    public string $email; //string
+    public string $senha; //string
+    public array $telefones; //array
 
-    //Método construtor
-    public function __construct($nome, $email) {
+    // Método (ou métodos)
+    public function exibirDados(){
+        echo "<h3> $this->nome </h3>";
+        echo "<ul>";
+        echo "<li>$this->email</li>";
+        echo "<li>". implode (',', $this->telefones)."</li>";
+        echo "</ul>";
 
-        //$this é uma variável especial, sempre apontando para a referência da Classe atualmente manipulada.
-        $this->nome = $nome;
-        $this->email = $email;        
     }
 }
 

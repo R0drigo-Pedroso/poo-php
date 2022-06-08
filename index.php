@@ -4,19 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Exemplo 02 - PHP - POO</title>
+    <title>Exemplo 04 - PHP - POO</title>
 </head>
 <body>
-    <h1>PHP POO - Exemplo 03</h1>
+    <h1>PHP POO - Exemplo 04</h1>
     <hr>
 
+    <h2>Assundo Abordados: </h2>
     <ul>
         <li>
-            Acesso direto à propriedade
+            Encapsulamento
         </li>
 
         <li>
-            Atribuição de dados e leitura
+            Monificadores de visibilidade
+        </li>
+
+        <li>
+            Métodos getters e setters (Metodos de acesso)
         </li>
     </ul>
 
@@ -29,30 +34,29 @@
     $clienteB = new Cliente;
 
     // Atribuido dados às propriedades do objetos
+    // Captura de dados setters
+    
+    $clienteA->setNome('João');
+    $clienteA->setEmail('jaoa@contato.com');
+    $clienteA->setSenha('');
 
-    $clienteA->nome = 'João';
-    $clienteA->email = "joao@contato.com";
-    $clienteA->telefones = ["11-98989-8989", "11-2345-1234"];
-
-    $clienteB->nome = 'Maria';
-    $clienteB->email = "maria@ver.com.br";
-    $clienteB->telefones = array("11-98495-8495");
+    $clienteB->setNome('Maria');
+    $clienteB->setEmail('maria@mariah.com.br');
+    $clienteB->setSenha('');
+    
 ?>
 
-    <h2>Dados dos Objetos (leitura)</h2>
+    <h2>Dados dos Objetos (leitura via getters)</h2>
         <hr>
     
-    <h3><?=$clienteA->nome?></h3>
-        <p>Email: <?=$clienteA->email?></p>
-        <p>Telefones: <?=implode(", ", $clienteA->telefones)?></p>
+    <h3><?=$clienteA->getNome()?></h3> 
+    <h3><?=$clienteA->getEmail()?></h3>
+    <h3><?=$clienteA->getSenha()?></h3>
 
-    <h3><?=$clienteB->nome?></h3>
-        <p>Email: <?=$clienteB->email?></p>
-        <p>Telefones: <?=implode(", ", $clienteB->telefones)?></p>
-    
-    <h2>Chamado método exibirDados</h2>
-    <?=$clienteA->exibirDados()?>
-    <?=$clienteB->exibirDados()?>
 
+    <h3><?=$clienteB->getNome()?></h3>
+    <h3><?=$clienteB->getEmail()?></h3>
+    <h3><?=$clienteB->getSenha()?></h3>
+       
 </body>
 </html>

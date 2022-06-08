@@ -2,19 +2,32 @@
 
 class Cliente {
     // Propriedade (ou atributos)
-    public string $nome; //string
-    public string $email; //string
-    public string $senha; //string
-    public array $telefones; //array
+    private string $nome; //string
+    private string $email; //string
+    private string $senha; //string
 
-    // Método (ou métodos)
-    public function exibirDados(){
-        echo "<h3> $this->nome </h3>";
-        echo "<ul>";
-        echo "<li>$this->email</li>";
-        echo "<li>". implode (',', $this->telefones)."</li>";
-        echo "</ul>";
 
+    // Método (ou métodos - funções getters e setters)
+    public function getNome():string{
+        return $this->nome;
     }
+    public function getEmail():string{
+        return $this->email;
+    }
+    public function getSenha():string{
+        return $this->senha;
+    }
+
+
+    public function setNome(string $nome):void{
+        $this->nome = $nome;
+    }
+    public function setEmail(string $email):void{
+        $this->email = $email;
+    }
+    public function setSenha(string $senha):void{
+        $this->senha = password_hash($senha, PASSWORD_DEFAULT);;
+    }
+
 }
 

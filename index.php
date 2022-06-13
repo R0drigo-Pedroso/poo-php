@@ -18,16 +18,26 @@
         <li>
             Classe Abstract
         </li>
+
+        <li>
+            Classe Final
+        </li>
+
+        <li>
+            Métodos protected (Acessíveis apenas pela subclasses)
+        </li>
     </ul>
 
 <?php
     // Importando a Classe
     require_once 'src/PessoaFisica.php';
     require_once 'src/PessoaJuridica.php';
+    require_once 'src/MEI.php';
 
     // Instanciando a Classe
     $clientePF = new PessoaFisica;
     $clientePJ = new PessoaJuridica;
+    $clienteMEI = new MEI;
 
     // Atribuindo valores aos atributos
     $clientePF->setNome('João');
@@ -42,17 +52,16 @@
     $clientePJ->setCnpj('123.456.789/0001-00');
     $clientePJ->setAnoFundacao(2020);
     $clientePJ->setNomeFantasia('Maria Empresa');
-?>
-    
-<pre><?=var_dump($clientePF)?></pre>
-<pre><?=var_dump($clientePJ)?></pre>
 
-
-<!-- Atricuição classe Abstract -->
-<?php 
-    $cliente = new Cliente; // Erro Fatal - Não é possível instanciar uma classe abstract
+    // Instanciando a Classe
+    $clienteMEI->setNome('Leila');
+    $clienteMEI->setNomeFantasia('Leila Empresa');
+    $clienteMEI->setCnpj("123.456.789/0001-00");
+    $clienteMEI->setAnoFundacao(2020);
+    $clienteMEI->setAreaDeAtuacao("Vendas");
 ?>
-<pre><?=var_dump($cliente)?></pre>
+
+<pre><?=var_dump($clienteMEI, $clientePJ, $clientePF)?></pre>
 
 </body>
 </html>

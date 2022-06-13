@@ -7,6 +7,8 @@ abstract class Cliente {
     private string $email; //string
     private string $senha; //string
 
+    private string $situacao = "a definir"; //string
+
 
     // Método (ou métodos - funções getters e setters)
     public function getNome():string{
@@ -30,5 +32,21 @@ abstract class Cliente {
         $this->senha = password_hash($senha, PASSWORD_DEFAULT);;
     }
 
+    // Situação
+    protected function getSituacao(): string{
+        return $this->situacao;
+    }
+
+    protected function setSituacao(string $situacao): self {
+        $this->situacao = $situacao;
+
+        return $this;
+    }
 }
 
+/* 
+PROTECDET - "SUPER CLASSES"  Classes protegidas NÃO PODEM SER INSTANCIADAS. Recursos acessíveis pela própria classe e por herdeiros.
+PUBLIC - Acesso livre a todos os métodos e atributos.
+PRIVATE - Acesso apenas aos métodos e atributos da classe que está sendo extendida.
+
+*/

@@ -59,7 +59,7 @@
     <hr>
     
     <section>
-        <h3>Dados do Ciente PJ</h3>
+        <h3>Dados do Ciente PJ: </h3>
             <p>
                 <?=$clientePJ->getNome()?>
             </p>

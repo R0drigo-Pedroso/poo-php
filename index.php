@@ -26,18 +26,20 @@
         <li>
             Métodos protected (Acessíveis apenas pela subclasses)
         </li>
+
+        <li>
+            Polimorfismo
+        </li>
     </ul>
 
 <?php
     // Importando a Classe
     require_once 'src/PessoaFisica.php';
     require_once 'src/PessoaJuridica.php';
-    require_once 'src/MEI.php';
 
     // Instanciando a Classe
     $clientePF = new PessoaFisica;
     $clientePJ = new PessoaJuridica;
-    $clienteMEI = new MEI;
 
     // Atribuindo valores aos atributos
     $clientePF->setNome('João');
@@ -51,17 +53,10 @@
     $clientePJ->setEmail('maria@maria.com.br');
     $clientePJ->setCnpj('123.456.789/0001-00');
     $clientePJ->setAnoFundacao(2020);
-    $clientePJ->setNomeFantasia('Maria Empresa');
 
-    // Instanciando a Classe
-    $clienteMEI->setNome('Leila');
-    $clienteMEI->setNomeFantasia('Leila Empresa');
-    $clienteMEI->setCnpj("123.456.789/0001-00");
-    $clienteMEI->setAnoFundacao(2020);
-    $clienteMEI->setAreaDeAtuacao("Vendas");
 ?>
 
-<pre><?=var_dump($clienteMEI, $clientePJ, $clientePF)?></pre>
+<pre><?=var_dump($clientePJ, $clientePF)?></pre>
 
 </body>
 </html>

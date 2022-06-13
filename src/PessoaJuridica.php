@@ -7,7 +7,7 @@ require_once 'Cliente.php';
 /*final*/ class PessoaJuridica extends Cliente {
     private string $cnpj;
     private int $anoFundacao;
-    private string $nomeFantasia;
+    private string $nome;
 
     public function __construct() {
         $this->setSituacao("verificar");
@@ -38,12 +38,12 @@ require_once 'Cliente.php';
     // Final AnoFundacao
 
     // Inicio NomeFantasia
-    public function getNomeFantasia(): string {
-        return $this->nomeFantasia;
+    public function getNome(): string {
+        return $this->nome;
     }
 
-    public function setNomeFantasia(string $nomeFantasia): self {
-        $this->nomeFantasia = $nomeFantasia;
+    public function setNome(string $nome): self {
+        $this->nome = "Empresa: ". $nome;
 
         return $this;
     }

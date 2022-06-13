@@ -56,6 +56,30 @@
 
 ?>
 
+    <hr>
+    
+    <section>
+        <h3>Dados do Ciente PJ</h3>
+            <p>
+                <?=$clientePJ->getNome()?>
+            </p>
+        
+            <?=$clientePJ->exibirDados()?>    
+        </section>
+   
+    <hr>
+
+        <section>
+            <h3>Dados do Cliente PF: </h3>
+               <p>
+                    <?=$clientePF->getNome()?>
+                </p>
+            
+           <?=$clientePF->exibirDados()?>
+        </section>
+
+    <hr>
+
 <pre><?=var_dump($clientePJ, $clientePF)?></pre>
 
 </body>

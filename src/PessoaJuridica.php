@@ -13,6 +13,12 @@ require_once 'Cliente.php';
         $this->setSituacao("verificar");
     }
 
+    public function exibirDados() {
+        echo "<p>CNPJ: " .$this->cnpj. "</p>";
+        echo "<p>Ano de Fundação: " .$this->anoFundacao. "</p>";
+        echo "<p>Situação: " .$this->getSituacao(). "</p>";
+    }
+
     // Inicio CNPJ
     public function getCnpj(): string {
         return $this->cnpj;
@@ -42,10 +48,8 @@ require_once 'Cliente.php';
         return $this->nome;
     }
 
-    public function setNome(string $nome): self {
+    public function setNome(string $nome) {
         $this->nome = "Empresa: ". $nome;
-
-        return $this;
     }
     // Final NomeFantasia
 }

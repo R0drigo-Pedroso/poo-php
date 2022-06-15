@@ -4,32 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Exemplo 05 - PHP - POO</title>
+    <title>Exemplo 07 - PHP - POO</title>
 </head>
 <body>
-    <h1>PHP POO - Exemplo 05</h1>
+    <h1>PHP POO - Exemplo 07</h1>
     <hr>
 
     <h2>Assundo Abordados: </h2>
     <ul>
-        <li>
-            Herança
-        </li>
-        <li>
-            Classe Abstract
-        </li>
-
-        <li>
-            Classe Final
-        </li>
-
-        <li>
-            Métodos protected (Acessíveis apenas pela subclasses)
-        </li>
-
-        <li>
-            Polimorfismo
-        </li>
+       <li>Propriedades e métodos Estáticos</li>
     </ul>
 
 <?php
@@ -39,48 +22,40 @@
 
     // Instanciando a Classe
     $clientePF = new PessoaFisica;
-    $clientePJ = new PessoaJuridica;
 
     // Atribuindo valores aos atributos
-    $clientePF->setNome('João');
-    $clientePF->setEmail('contato@contato.com.br');
-    $clientePF->setCpf('123.456.789-00');
     $clientePF->setIdade(20);
-    $clientePF->setSenha('123456');
-
-    // Atribuindo valores aos atributos
-    $clientePJ->setNome('Maria');
-    $clientePJ->setEmail('maria@maria.com.br');
-    $clientePJ->setCnpj('123.456.789/0001-00');
-    $clientePJ->setAnoFundacao(2020);
-
-?>
-
-    <hr>
+    $clientePF->setNome("João");
     
-    <section>
-        <h3>Dados do Ciente PJ: </h3>
-            <p>
-                <?=$clientePJ->getNome()?>
-            </p>
-        
-            <?=$clientePJ->exibirDados()?>    
-        </section>
-   
-    <hr>
+    // Acessando uma propriedade estática
+    PessoaFisica :: $cidade = "São Paulo";
 
+    // Acessando e lendo o valor de uma propriedade estática
+    echo PessoaFisica::$cidade;
+    
+?>
+    <hr>
         <section>
             <h3>Dados do Cliente PF: </h3>
-               <p>
-                    <?=$clientePF->getNome()?>
+                <p>
+                <?=$clientePF->getNome()?>
+                </p>
+
+                <p>
+                    <?=$clientePF->getIdade()?>
+                </p>
+
+                <!-- fazendo veficação atraves do estatico -->
+                <p>
+                    Tipo de atendimento: <?=PessoaFisica::verificaIdade(90)?>
+                </p>
+
+                <p>
+                    tipo de atendimento: <?=PessoaFisica::verificaIdade(20)?>
                 </p>
             
-           <?=$clientePF->exibirDados()?>
         </section>
 
-    <hr>
-
-<pre><?=var_dump($clientePJ, $clientePF)?></pre>
 
 </body>
 </html>

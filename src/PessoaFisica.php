@@ -6,6 +6,14 @@ class PessoaFisica extends Cliente {
     private string $cpf;
     private int $idade;
 
+    // propriedades estáticas (não depende de um objeto para ser acessado)
+    public static string $cidade;
+
+    // Método estatico (não depende de um objeto para ser acessado)
+    public static function verificaIdade (int $idade): string {
+        return $idade >=60 ? 'Prioridade' : 'Normal';
+    }
+
     public function __construct() {
         $this->setSituacao("normal");
     }
